@@ -45,7 +45,7 @@ jobs:
         label: [ubuntu-latest]
     runs-on: ${{ matrix.label }}
     container:
-      image: hello-world
+      image: ubuntu
     steps:
       - name: Check for dockerenv file
         run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
