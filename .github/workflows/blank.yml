@@ -17,39 +17,35 @@ on:
 jobs:
 
   # This workflow contains a single job called "build"
-  build:
+  run-on-instance:
     strategy:
       matrix:
-        # label: [ah-ubuntu_22_04-c7g_x-50, ah_ubuntu_22_04_c6g_x_50, c6g.2xlarge, c7g.2xlarge, c6g.8xlarge, c7g.8xlarge, c7g.4xlarge, c7g.8xlarge]
-        label: [ah_ubuntu_22_04_c6g_2x_50]
-        var: [1,2,3,4,5,6,7,8,9,10]
-        runs: [1,2,3,4,5]
+        label: [ah-ubuntu_22_04-c7g_x-50, ah_ubuntu_22_04_c6g_x_50, c6g.2xlarge, c7g.2xlarge, c6g.8xlarge, c7g.8xlarge, c7g.4xlarge, c7g.8xlarge]
         
     # The type of runner that the job will run on
     runs-on: ${{ matrix.label }}
 
     steps:
-      # - name: Run a command
-      #   run: echo Hello, world!
+      - name: Run a command
+        run: echo Hello, world!
 
-      # # Runs sudo docker
-      # - name: Runs docker
-      #   run: |
-      #     docker run hello-world
+      # Runs sudo docker
+      - name: Runs docker
+        run: |
+          docker run hello-world
 
       # Runs sudo docker
       - name: Runs sudo docker
         run: |
           sudo docker run hello-world
-          sleep 3600
           
-  # container-test-job:
-  #   strategy:
-  #     matrix:
-  #       label: [ah-ubuntu_22_04-c7g_x-50, ah_ubuntu_22_04_c6g_x_50, c6g.2xlarge, c7g.2xlarge, c6g.8xlarge, c7g.8xlarge, c7g.4xlarge, c7g.8xlarge]
-  #   runs-on: ${{ matrix.label }}
-  #   container:
-  #     image: ubuntu
-  #   steps:
-  #     - name: Check for dockerenv file
-  #       run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+  run-on-container:
+    strategy:
+      matrix:
+        label: [ah-ubuntu_22_04-c7g_x-50, ah_ubuntu_22_04_c6g_x_50, c6g.2xlarge, c7g.2xlarge, c6g.8xlarge, c7g.8xlarge, c7g.4xlarge, c7g.8xlarge]
+    runs-on: ${{ matrix.label }}
+    container:
+      image: ubuntu
+    steps:
+      - name: Check for dockerenv file
+        run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
