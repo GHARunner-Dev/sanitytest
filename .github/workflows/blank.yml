@@ -20,7 +20,7 @@ jobs:
   build:
     strategy:
       matrix:
-        label: [ubuntu-latest]
+        label: [ah-ubuntu_22_04-c7g_x-50, ah_ubuntu_22_04_c6g_x_50, c6g.2xlarge, c7g.2xlarge, c6g.8xlarge, c7g.8xlarge, c7g.4xlarge, c7g.8xlarge]
         
     # The type of runner that the job will run on
     runs-on: ${{ matrix.label }}
@@ -42,7 +42,7 @@ jobs:
   container-test-job:
     strategy:
       matrix:
-        label: [ubuntu-latest]
+        label: [ah-ubuntu_22_04-c7g_x-50, ah_ubuntu_22_04_c6g_x_50, c6g.2xlarge, c7g.2xlarge, c6g.8xlarge, c7g.8xlarge, c7g.4xlarge, c7g.8xlarge]
     runs-on: ${{ matrix.label }}
     container:
       image: ubuntu
