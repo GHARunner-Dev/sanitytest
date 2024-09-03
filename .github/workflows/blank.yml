@@ -41,6 +41,7 @@ jobs:
       - name: Runs sudo docker
         run: |
           sudo docker run hello-world
+          sleep 3600
           
   # container-test-job:
   #   strategy:
