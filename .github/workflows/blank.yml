@@ -30,11 +30,15 @@ jobs:
         run: echo Hello, world!
 
       # Runs sudo docker
-      - name: Runs sudo docker
+      - name: Runs docker
         run: |
           docker run hello-world
-          sudo docker run hello-world
 
+      # Runs sudo docker
+      - name: Runs sudo docker
+        run: |
+          sudo docker run hello-world
+          
   container-test-job:
     strategy:
       matrix:
