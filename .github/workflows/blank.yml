@@ -20,7 +20,7 @@ jobs:
   run-on-instance:
     strategy:
       matrix:
-        label: [ah-ubuntu_22_04-c7g_x-50, ah_ubuntu_22_04_c6g_x_50, c6g.2xlarge, c7g.2xlarge, c6g.8xlarge, c7g.8xlarge, c7g.4xlarge, c7g.8xlarge]
+        label: [ah-ubuntu_22_04-c7g_x-50, ah_ubuntu_22_04_c6g_x_50, ah_ubuntu_22_04_c6g_2x_50, ah_ubuntu_22_04_c7g_2x_50, ah_ubuntu_22_04_c6g_8x_100, ah_ubuntu_22_04_c7g_8x_100, ah_ubuntu_22_04_c7g_4x_50, ah_ubuntu_22_04_c7g_8x_50]
         
     # The type of runner that the job will run on
     runs-on: ${{ matrix.label }}
@@ -42,7 +42,7 @@ jobs:
   run-on-container:
     strategy:
       matrix:
-        label: [ah-ubuntu_22_04-c7g_x-50, ah_ubuntu_22_04_c6g_x_50, c6g.2xlarge, c7g.2xlarge, c6g.8xlarge, c7g.8xlarge, c7g.4xlarge, c7g.8xlarge]
+        label: [ah-ubuntu_22_04-c7g_x-50, ah_ubuntu_22_04_c6g_x_50, ah_ubuntu_22_04_c6g_2x_50, ah_ubuntu_22_04_c7g_2x_50, ah_ubuntu_22_04_c6g_8x_100, ah_ubuntu_22_04_c7g_8x_100, ah_ubuntu_22_04_c7g_4x_50, ah_ubuntu_22_04_c7g_8x_50]
     runs-on: ${{ matrix.label }}
     container:
       image: ubuntu
