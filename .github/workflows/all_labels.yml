@@ -21,17 +21,31 @@ jobs:
     strategy:
       matrix:
         label: 
+          - ah-ubuntu_20_04-c6g_x-50
+          - ah-ubuntu_20_04-c6g_4x-50
+          - ah-ubuntu_20_04-c7g_4x-50
+          - ah-ubuntu_20_04-c7g_m-100
           - ah-ubuntu_22_04-c6g_x-50
-          # - ah-ubuntu_22_04-c6g_2x-50
-          # - ah-ubuntu_22_04-c6g_4x-50
-          # - ah-ubuntu_22_04-c6g_8x-100
-          # - ah-ubuntu_22_04-c7g_x-50
-          # - ah-ubuntu_22_04-c7g_2x-50
-          # - ah-ubuntu_22_04-c7g_4x-50
-          # - ah-ubuntu_22_04-c7g_8x-100
-          # # - ah-ubuntu_22_04-r8g_2x-50
-          # - ah-ubuntu_22_04-c7g_m-100
-        
+          - ah-ubuntu_22_04-c6g_2x-50
+          - ah-ubuntu_22_04-c6g_4x-50
+          - ah-ubuntu_22_04-c6g_8x-100
+          - ah-ubuntu_22_04-c7g_x-50
+          - ah-ubuntu_22_04-c7g_2x-50
+          - ah-ubuntu_22_04-c7g_4x-50
+          - ah-ubuntu_22_04-c7g_8x-100
+          # - ah-ubuntu_22_04-r8g_2x-50
+          - ah-ubuntu_22_04-c7g_m-100
+          - ah-ubuntu_24_04-c6g_x-50
+          - ah-ubuntu_24_04-c6g_2x-50
+          - ah-ubuntu_24_04-c6g_4x-50
+          - ah-ubuntu_24_04-c6g_8x-100
+          - ah-ubuntu_24_04-c7g_x-50
+          - ah-ubuntu_24_04-c7g_2x-50
+          - ah-ubuntu_24_04-c7g_4x-50
+          - ah-ubuntu_24_04-c7g_8x-100
+          # - ah-ubuntu_22_04-r8g_2x-50
+          - ah-ubuntu_24_04-c7g_m-100
+  
     # The type of runner that the job will run on
     runs-on: ${{ matrix.label }}
 
@@ -55,6 +69,10 @@ jobs:
     strategy:
       matrix:
         label: 
+            - ah-ubuntu_20_04-c6g_x-50
+            - ah-ubuntu_20_04-c6g_4x-50
+            - ah-ubuntu_20_04-c7g_4x-50
+            - ah-ubuntu_20_04-c7g_m-100
             - ah-ubuntu_22_04-c6g_x-50
             - ah-ubuntu_22_04-c6g_2x-50
             - ah-ubuntu_22_04-c6g_4x-50
@@ -64,7 +82,17 @@ jobs:
             - ah-ubuntu_22_04-c7g_4x-50
             - ah-ubuntu_22_04-c7g_8x-100
             # - ah-ubuntu_22_04-r8g_2x-50
-            - ah-ubuntu_22_04-c7g_m-100      
+            - ah-ubuntu_22_04-c7g_m-100
+            - ah-ubuntu_24_04-c6g_x-50
+            - ah-ubuntu_24_04-c6g_2x-50
+            - ah-ubuntu_24_04-c6g_4x-50
+            - ah-ubuntu_24_04-c6g_8x-100
+            - ah-ubuntu_24_04-c7g_x-50
+            - ah-ubuntu_24_04-c7g_2x-50
+            - ah-ubuntu_24_04-c7g_4x-50
+            - ah-ubuntu_24_04-c7g_8x-100
+            # - ah-ubuntu_24_04-r8g_2x-50
+            - ah-ubuntu_24_04-c7g_m-100    
     runs-on: ${{ matrix.label }}
     container:
       image: ubuntu
